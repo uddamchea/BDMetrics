@@ -1,90 +1,37 @@
-/* Set up the background image */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(4, auto);
+  gap: 6px 36px;
+  margin-bottom: 40px;
+  justify-items: center;
+}
+
+.metric-label {
+  font-size: 1rem;
+  color: #6273ad;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.metric-box {
+  background: #f3f6f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 32px 0;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #25326e;
+  font-weight: 500;
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 110px);
+    grid-template-rows: repeat(6, auto);
+    gap: 6px 16px;
   }
-  
-  .background {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.35; /* Adjust for desired transparency */
-    z-index: 0;
-  }
-  
-  /* Central container for metrics and title */
-  .container {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255,255,255,0.8);
-    box-shadow: 0 6px 32px rgba(0,0,0,0.13);
-    border-radius: 18px;
-    padding: 48px 32px 32px 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1;
-    min-width: 340px;
-  }
-  
-  .title {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #19214D;
-    letter-spacing: 2px;
-  }
-  
-  .metrics {
-    display: grid;
-    grid-template-columns: repeat(3, 120px);
-    grid-gap: 18px 36px;
-    margin-bottom: 40px;
-  }
-  
-  .metric {
-    background: #f3f6f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    padding: 32px 0;
-    font-size: 1.1rem;
-    text-align: center;
-    color: #25326e;
-    font-weight: 500;
-  }
-  
-  /* Bottom total number */
-  .bottom-number {
-    font-size: 1.2rem;
-    margin-top: 16px;
-    color: #1A2753;
-  }
-  
-  .number {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #4B6EC2;
-  }
-  
-  /* Responsive for small screens */
-  @media (max-width: 700px) {
-    .metrics {
-      grid-template-columns: repeat(2, 110px);
-      grid-gap: 16px 16px;
-    }
-    .metric {
-      padding: 22px 0;
-      font-size: 1rem;
-    }
-    .container {
-      padding: 24px 8px 20px 8px;
-      min-width: 0;
-      width: 90vw;
-    }
-  }
-  
+}
